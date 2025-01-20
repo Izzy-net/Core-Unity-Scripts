@@ -20,6 +20,7 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("trigger");
         if ((canDestroyBullet.value & (1<< collider.gameObject.layer)) > 0)
         {
             //vfx

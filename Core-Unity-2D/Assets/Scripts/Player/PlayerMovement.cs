@@ -1,23 +1,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDamageable
 {
+    [Header("General")]
+    [SerializeField] float health = 30f;
+
+    [Header("Movement")]
     Rigidbody2D myRigidbody;  //declare variable
     CapsuleCollider2D myCollider;
     float playerHeight;
     [SerializeField] float moveSpeed = 1f;    //we want to be able to alter moveSpeed from the inspector
     [SerializeField] float jumpHeight = 1f;   //we want to be able to alter jumpHeight from the inspector
     Vector2 moveInput; // declare variable
-    [SerializeField] LayerMask layerMask;
-    Shooting shootingScript;
-
+    [SerializeField] LayerMask canJump;
+    
+    [Header("Shooting")]
+    [SerializeField] GameObject bulletObject;
+    [SerializeField] GameObject gun;
+    [SerializeField] GameObject bulletSpawnPoint;
+ 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();  //get rigidbody component from gameobject and set it as myRigidbody variable
         myCollider = GetComponent<CapsuleCollider2D>();
-        shootingScript = GetComponent<Shooting>();
-        layerMask = LayerMask.GetMask("Ground");
+        canJump = LayerMask.GetMask("Ground");
     }
 
     private void Start() 
@@ -43,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJump()                           //this is the function used by the unity engine player input system to handle jump input
     {                                             //it will execute whenever the system detects the input for the associated action
-        if (Physics2D.Raycast(transform.position, Vector2.down,  playerHeight/2*1.02f, layerMask))
+        if (Physics2D.Raycast(transform.position, Vector2.down,  playerHeight/2*1.02f, canJump))
         {
             myRigidbody.linearVelocityY = jumpHeight;   //here we just want a single instance of explosive velocity in the form of a jump
         }
@@ -51,6 +58,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnFire()
     {
-        shootingScript.ShootOnce();
+        Shoot();
+    }
+
+    private void Shoot()
+    {
+        Instantiate(bulletObject, bulletSpawnPoint.transform.position, gun.transform.rotation);
+    }
+
+    public void Damage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
