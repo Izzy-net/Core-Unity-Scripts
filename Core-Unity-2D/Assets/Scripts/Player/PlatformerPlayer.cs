@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour, IDamageable
+public class PlatformerPlayer : MonoBehaviour, IDamageable
 {
     [Header("General")]
     [SerializeField] float health = 30f;

@@ -6,13 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Patrol Enemy.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/Turret Enemy.unity
     guid: 7df406cc64118944a956ea1336f6ac0a
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/Aim and Shoot.unity
     guid: 77e3c64883182e24b961cc5033fd5195
+  - enabled: 1
+    path: Assets/Scenes/Score Keeping.unity
+    guid: 7da0fd43c0a2a0441a32fa60fbcf2119
+  - enabled: 1
+    path: Assets/Scenes/Score Keeping 2.unity
+    guid: 64b9f3c05a1deef4daf58b6db3efec72
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: 7636ba2e7b70cf0488a693cb52f84cef
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

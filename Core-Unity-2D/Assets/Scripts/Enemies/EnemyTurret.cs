@@ -14,7 +14,7 @@ public class EnemyTurret : MonoBehaviour
     
     private void Awake()
     {
-        player = FindFirstObjectByType<PlayerMovement>().gameObject;
+        player = FindFirstObjectByType<PlatformerPlayer>().gameObject;
     }
     void Start()
     {

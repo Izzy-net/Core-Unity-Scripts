@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708908515719245936}
-  - component: {fileID: 1405790628079998576}
   - component: {fileID: 5593974755330060754}
   - component: {fileID: 6667946568352872548}
   - component: {fileID: 1748588003623675069}
+  - component: {fileID: 8107834147243522314}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -37,26 +37,6 @@ Transform:
   - {fileID: 6698946602100679232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1405790628079998576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383999918453161333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e55d9ea2f5f172843a9b49ea296f178a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpHeight: 15
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  bulletObject: {fileID: 7997917347419353730, guid: 9ce1926631c9604418e19aebe874b9b1, type: 3}
-  gun: {fileID: 6478203875672601242}
-  bulletSpawnPoint: {fileID: 6478203875672601242}
 --- !u!50 &5593974755330060754
 Rigidbody2D:
   serializedVersion: 5
@@ -151,6 +131,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8107834147243522314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383999918453161333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95abc7c10c4f3a47ad720ad2917631b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  moveSpeed: 7
+  jumpHeight: 15
+  canJump:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletObject: {fileID: 7997917347419353730, guid: 9ce1926631c9604418e19aebe874b9b1, type: 3}
+  gun: {fileID: 6478203875672601242}
+  bulletSpawnPoint: {fileID: 6478203875672601242}
 --- !u!1 &5192791894812571593
 GameObject:
   m_ObjectHideFlags: 0

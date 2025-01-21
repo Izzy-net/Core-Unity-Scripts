@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.96, y: 0.16, z: 1}
+  m_LocalScale: {x: 2.71, y: 0.16, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2306491030664969820}
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 3398891969457154177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.945, y: 0, z: 0}
+  m_LocalPosition: {x: 1.349, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,7 +194,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8107834147243522314, guid: 8a201b47f1d33a44792b4f5d02387998, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6698946602100679232, guid: 8a201b47f1d33a44792b4f5d02387998, type: 3}
@@ -207,6 +208,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2383999918453161333, guid: 8a201b47f1d33a44792b4f5d02387998, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2850650051916912023}
+    - targetCorrespondingSourceObject: {fileID: 2383999918453161333, guid: 8a201b47f1d33a44792b4f5d02387998, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1529772980705168174}
   m_SourcePrefab: {fileID: 100100000, guid: 8a201b47f1d33a44792b4f5d02387998, type: 3}
 --- !u!4 &2306491030664969820 stripped
 Transform:
@@ -236,3 +240,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 2671207649871900294}
+--- !u!114 &1529772980705168174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764572001116381545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95abc7c10c4f3a47ad720ad2917631b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  moveSpeed: 5
+  jumpHeight: 5
+  canJump:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletObject: {fileID: 7997917347419353730, guid: 9ce1926631c9604418e19aebe874b9b1, type: 3}
+  gun: {fileID: 2671207649871900294}
+  bulletSpawnPoint: {fileID: 3398891969457154177}
